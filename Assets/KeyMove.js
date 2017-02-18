@@ -26,6 +26,6 @@ function Update ()
         this.transform.Translate (Vector3.up * 0.3);
 
 
-    if(Input.GetKey("shift"))   
+    if(Input.GetKey("c"))   
         this.transform.Translate (Vector3.down * 0.3);
 }
