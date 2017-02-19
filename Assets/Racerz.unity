@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 263798769}
   - component: {fileID: 263798768}
   - component: {fileID: 263798767}
+  - component: {fileID: 263798771}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -229,7 +230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 263798765}
   m_LocalRotation: {x: 0.10794597, y: 0.7220983, z: -0.10891424, w: 0.6745809}
-  m_LocalPosition: {x: -4.8300004, y: 2.8400002, z: 0.0000019073486}
+  m_LocalPosition: {x: -4.9, y: 3.29, z: -0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 481896337}
@@ -290,6 +291,17 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
+--- !u!114 &263798771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263798765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5b52f5b2d2ac749abcad60f2aca66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &286429602
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,20 +613,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
   m_PrefabInternal: {fileID: 1465052216}
---- !u!64 &481896338
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 481896333}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
 --- !u!65 &481896339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -625,8 +623,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.822205, y: 1, z: 2}
-  m_Center: {x: -0.5133859, y: 1.0000749, z: 0.0010446012}
+  m_Size: {x: 4.822205, y: 1.5164443, z: 2}
+  m_Center: {x: -0.51315224, y: 0.7419752, z: 0.0011134148}
 --- !u!82 &481896340
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1784,31 +1782,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 338.33
+      value: 338.72
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.93
+      value: 56.38
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.09
+      value: 25.72
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11260292
+      value: 0.074530765
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.75366074
+      value: -0.75522023
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10653829
+      value: -0.04062974
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.63872194
+      value: 0.6499514
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_RootOrder
@@ -1816,15 +1814,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -99.288
+      value: -98.73801
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.95900005
+      value: 2.035
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -17.810001
+      value: -9.526
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36c373404a6674148b156e3398f0320f, type: 3}
@@ -2485,7 +2483,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
