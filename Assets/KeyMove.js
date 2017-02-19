@@ -7,7 +7,7 @@ function Start () {
 function Update () 
 {
     if(Input.GetKey("w"))   
-        this.transform.Translate (Vector3.forward * 0.3);
+       this.transform.Translate (Vector3.forward * 0.4);
 
 
     if(Input.GetKey("s"))   
@@ -15,11 +15,11 @@ function Update ()
 
 
     if(Input.GetKey("a"))   
-        this.transform.Rotate (Vector3.down * 1.3);
+        this.transform.Rotate (Vector3.down * 1.7);
 
 
     if(Input.GetKey("d"))   
-        this.transform.Rotate (Vector3.up * 1.3);
+        this.transform.Rotate (Vector3.up * 1.7);
 
 
     if(Input.GetKey("space"))   
