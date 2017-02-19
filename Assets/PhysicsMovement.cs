@@ -12,11 +12,11 @@ public class PhysicsMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey("w"))
-            this.GetComponent<Rigidbody>().AddForce(transform.right * 50);
+            this.GetComponent<Rigidbody>().AddForce(transform.right * 600);
 
 
     if (Input.GetKey("s"))
-            this.GetComponent<Rigidbody>().AddForce(transform.right * -50);
+            this.GetComponent<Rigidbody>().AddForce(transform.right * -600);
 
 
 
