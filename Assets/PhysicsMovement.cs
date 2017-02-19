@@ -16,7 +16,7 @@ public class PhysicsMovement : MonoBehaviour {
 
 
     if (Input.GetKey("s"))
-            this.GetComponent<Rigidbody>().AddForce(transform.right * -12);
+            this.GetComponent<Rigidbody>().AddForce(transform.right * -50);
 
 
 
