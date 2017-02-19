@@ -158,13 +158,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 233400798}
-  m_LocalRotation: {x: 0.21496862, y: -0.014617637, z: -0.0032179344, w: 0.9765063}
-  m_LocalPosition: {x: -0.02, y: 1.77, z: -2.97}
-  m_LocalScale: {x: 1, y: 0.6007817, z: 1}
+  m_LocalRotation: {x: -0.21149057, y: 0.037514202, z: -0.022396065, w: -0.97640306}
+  m_LocalPosition: {x: 0.2633934, y: 2.023012, z: -2.5141525}
+  m_LocalScale: {x: 1, y: 0.6007818, z: 1}
   m_Children: []
   m_Father: {fileID: 1035129328}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 24.818, y: -1.8900001, z: -0.79300004}
+  m_LocalEulerAnglesHint: {x: -1.9030001, y: -30.435001, z: -88.921005}
 --- !u!81 &233400802
 AudioListener:
   m_ObjectHideFlags: 0
@@ -411,14 +411,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035129323}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.05343001, y: -0.020202111, z: 0.06403251, w: -0.9963117}
   m_LocalPosition: {x: 43, y: 9.2, z: -142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 233400799}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.261, y: 1.9260001, z: 352.751}
 --- !u!154 &1035129329
 TerrainCollider:
   m_ObjectHideFlags: 0
