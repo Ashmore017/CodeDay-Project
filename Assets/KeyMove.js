@@ -11,15 +11,15 @@ function Update ()
 
 
     if(Input.GetKey("s"))   
-        this.transform.Translate (Vector3.back * 0.1);
+        this.transform.Translate (Vector3.back * 0.2);
 
 
     if(Input.GetKey("a"))   
-        this.transform.Translate (Vector3.left * 0.1);
+        this.transform.Rotate (Vector3.up* 0.4);
 
 
     if(Input.GetKey("d"))   
-        this.transform.Translate (Vector3.right * 0.1);
+        this.transform.Rotate (Vector3.down * 0.4);
 
 
     if(Input.GetKey("space"))   
@@ -27,7 +27,7 @@ function Update ()
 
 
     if(Input.GetKey("c"))   
-        this.transform.Translate (Vector3.down * 0.3);
+        this.transform.Translate (Vector3.down * 0.1);
 
     if(Input.GetKey("q"))   
         this.transform.Rotate (Vector3.left * 0.3);
