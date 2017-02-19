@@ -37,10 +37,10 @@ public class playerScript : MonoBehaviour {
 			parseFloat(e.data.GetField ("xpos").ToString()),
 			parseFloat(e.data.GetField ("ypos").ToString()), 
 			parseFloat(e.data.GetField ("zpos").ToString()))-updatedplayer.transform.position);
-		updatedplayer.GetComponent<Rigidbody>().velocity = new Vector3 (
+		/*updatedplayer.GetComponent<Rigidbody>().velocity = new Vector3 (
 			parseFloat (e.data.GetField ("xvel").ToString ()),
 			parseFloat (e.data.GetField ("yvel").ToString ()),
-			parseFloat (e.data.GetField ("zvel").ToString ()));
+			parseFloat (e.data.GetField ("zvel").ToString ()));*/
 		updatedplayer.transform.localRotation = Quaternion.Euler(parseFloat (e.data.GetField ("xrot").ToString ()),
 			parseFloat (e.data.GetField ("yrot").ToString ()),
 			parseFloat (e.data.GetField ("zrot").ToString ()));
@@ -48,10 +48,11 @@ public class playerScript : MonoBehaviour {
 		Debug.Log ("update!");
 	}
 
-	void OnApplicationQuit() {
+	public void OnDisable() {
 		JSONObject obj = new JSONObject ();
 		obj.AddField ("id", myID);
 		socket.Emit ("killplayer", obj);
+		Debug.Log ("HI" + myID);
 	}
 	public void Start() 
 	{
