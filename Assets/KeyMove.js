@@ -6,41 +6,25 @@ function Start () {
 
 function Update () 
 {
-    if(Input.GetKey("w"))   
-       this.transform.Translate (Vector3.forward * 0.4);
+
+    void Update () {
+        if (Input.GetKey("uparrow"))
+            this.GetComponent<Rigidbody>().AddForce(transform.right * 50);
 
 
-    if(Input.GetKey("s"))   
-        this.transform.Translate (Vector3.back * 0.05);
+        if (Input.GetKey("downarrow"))
+            this.GetComponent<Rigidbody>().AddForce(transform.right * -12);
 
 
-    if(Input.GetKey("a"))   
-        this.transform.Rotate (Vector3.down * 1.7);
 
 
-    if(Input.GetKey("d"))   
-        this.transform.Rotate (Vector3.up * 1.7);
+        if (Input.GetKey("leftarrow"))
+            this.transform.Rotate(Vector3.down * 2.5f);
 
 
-    if(Input.GetKey("space"))   
-        this.transform.Translate (Vector3.up * 0.3);
+        if (Input.GetKey("rightarrow"))
+            this.transform.Rotate(Vector3.up * 2.5f);
 
+    }
 
-    if(Input.GetKey("c"))   
-        this.transform.Translate (Vector3.down * 1.3);
-
-    if(Input.GetKey("q"))   
-        this.transform.Rotate (Vector3.forward * 1.3);
-
-    if(Input.GetKey("e"))   
-        this.transform.Rotate (Vector3.back * 1.3);
-
-    if(Input.GetKey("r"))   
-        this.transform.Rotate (Vector3.left * 1.3);
-
-    if(Input.GetKey("f"))   
-        this.transform.Rotate (Vector3.right * 1.3);
-
-    if(Input.GetKey("c"))   
-        this.transform.Rotate (Vector3.right * 0.3);
 }
