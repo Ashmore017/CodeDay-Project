@@ -26,8 +26,8 @@ public class playerScript : MonoBehaviour {
 
 	}
 	public void UpdatePosition(SocketIOEvent e) {
-		//if (myID == int.Parse (e.data.GetField ("id").ToString ()))
-		//	return;
+		if (myID == int.Parse (e.data.GetField ("id").ToString ()))
+			return;
 		GameObject updatedplayer = GameObject.Find ("player" + e.data.GetField ("id").ToString ());
 		Debug.Log (e.data.ToString ());
 		updatedplayer.transform.Translate(new Vector3 (
