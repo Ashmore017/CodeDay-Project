@@ -24,13 +24,12 @@ public class playerScript : MonoBehaviour {
 			float.Parse (e.data.GetField ("ypos").ToString(), CultureInfo.InvariantCulture.NumberFormat), 
 			float.Parse (e.data.GetField ("zpos").ToString(), CultureInfo.InvariantCulture.NumberFormat));
 		
-		this.myID = int.Parse(e.data.GetField ("id").ToString());
-		player.name = "player" + this.myID;
+		player.name = "player" + int.Parse(e.data.GetField ("id").ToString());
 		Debug.Log ("SPAWN");
 
 	}
 	public void UpdatePosition(SocketIOEvent e) {
-		if (myID == int.Parse (e.data.GetField ("id").ToString ()))
+		if (this.myID == int.Parse (e.data.GetField ("id").ToString ()))
 				return;
 		GameObject updatedplayer = GameObject.Find ("player" + e.data.GetField ("id").ToString ());
 		Debug.Log (e.data.ToString ());
