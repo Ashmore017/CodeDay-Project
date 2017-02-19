@@ -35,17 +35,18 @@ public class playerScript : MonoBehaviour {
 	void Update () {
 		GameObject go = GameObject.Find("SocketIO");
 		SocketIOComponent socket = go.GetComponent<SocketIOComponent>();
-		if (Input.GetKeyDown("w")) {
+		if (Input.GetKey(KeyCode.W)) {
 			Debug.Log ("FORWARD");
 			socket.Emit ("moveforward");
 		}
-		if (Input.GetKeyDown ("a")) {
+		else if (Input.GetKey (KeyCode.S)) {
+			Debug.Log ("Backwards");
 			socket.Emit ("movebackward");
 		}
-		if (Input.GetKeyDown ("s")) {
+		if (Input.GetKey (KeyCode.A)) {
 			socket.Emit ("turnleft");
 		}
-		if (Input.GetKeyDown ("d")) {
+		if (Input.GetKey (KeyCode.D)) {
 			socket.Emit ("turnright");
 		}
 	}
