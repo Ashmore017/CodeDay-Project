@@ -19,10 +19,10 @@ public class playerScript : MonoBehaviour {
 	public void SpawnPlayerServer(SocketIOEvent e) {
 		player = Instantiate(GameObject.Find ("Player"));
 		Debug.Log (e.data.ToString ());
-		player.transform.position = new Vector3 (
+		player.transform.Translate(new Vector3 (
 			float.Parse (e.data.GetField ("xpos").ToString(), CultureInfo.InvariantCulture.NumberFormat),
 			float.Parse (e.data.GetField ("ypos").ToString(), CultureInfo.InvariantCulture.NumberFormat), 
-			float.Parse (e.data.GetField ("zpos").ToString(), CultureInfo.InvariantCulture.NumberFormat));
+			float.Parse (e.data.GetField ("zpos").ToString(), CultureInfo.InvariantCulture.NumberFormat)) - player.transform.position);
 		
 		player.name = "player" + int.Parse(e.data.GetField ("id").ToString());
 		Debug.Log ("SPAWN");
@@ -33,6 +33,7 @@ public class playerScript : MonoBehaviour {
 				return;
 		GameObject updatedplayer = GameObject.Find ("player" + e.data.GetField ("id").ToString ());
 		Debug.Log (e.data.ToString ());
+		updatedplayer.transform.position = new Vector3 (0, 0, 0);
 		updatedplayer.transform.Translate(new Vector3 (
 			parseFloat(e.data.GetField ("xpos").ToString()),
 			parseFloat(e.data.GetField ("ypos").ToString()), 
@@ -41,9 +42,9 @@ public class playerScript : MonoBehaviour {
 			parseFloat (e.data.GetField ("xvel").ToString ()),
 			parseFloat (e.data.GetField ("yvel").ToString ()),
 			parseFloat (e.data.GetField ("zvel").ToString ()));*/
-		updatedplayer.transform.localRotation = Quaternion.Euler(parseFloat (e.data.GetField ("xrot").ToString ()),
+		/*updatedplayer.transform.rotation = Quaternion.Euler(parseFloat (e.data.GetField ("xrot").ToString ()),
 			parseFloat (e.data.GetField ("yrot").ToString ()),
-			parseFloat (e.data.GetField ("zrot").ToString ()));
+			parseFloat (e.data.GetField ("zrot").ToString ()));*/
 
 		Debug.Log ("update!");
 	}
