@@ -12,6 +12,10 @@ public class playerScript : MonoBehaviour {
 	private float parseFloat(String s) {
 		return float.Parse (s, CultureInfo.InvariantCulture.NumberFormat);
 	}
+	public void AssignPlayer(SocketIOEvent e) {
+		this.myID = int.Parse(e.data.GetField ("id").ToString());
+		Debug.Log ("Assign");
+	}
 	public void SpawnPlayerServer(SocketIOEvent e) {
 		player = Instantiate(GameObject.Find ("Player"));
 		Debug.Log (e.data.ToString ());
@@ -26,8 +30,8 @@ public class playerScript : MonoBehaviour {
 
 	}
 	public void UpdatePosition(SocketIOEvent e) {
-		if (myID == int.Parse (e.data.GetField ("id").ToString ()))
-			return;
+		//if (myID == int.Parse (e.data.GetField ("id").ToString ()))
+		//		return;
 		GameObject updatedplayer = GameObject.Find ("player" + e.data.GetField ("id").ToString ());
 		Debug.Log (e.data.ToString ());
 		updatedplayer.transform.Translate(new Vector3 (
@@ -58,6 +62,7 @@ public class playerScript : MonoBehaviour {
 		socket.On ("moveforward", MoveForward);
 		socket.On ("spawnplayerserver", SpawnPlayerServer);
 		socket.On ("updatepositionserver", UpdatePosition);
+		socket.On ("assignplayer", AssignPlayer);
 		StartCoroutine("test");
 
 	}
