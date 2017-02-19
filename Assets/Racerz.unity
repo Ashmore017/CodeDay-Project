@@ -145,9 +145,9 @@ GameObject:
   - component: {fileID: 233400804}
   - component: {fileID: 233400803}
   - component: {fileID: 233400802}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,13 +158,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 233400798}
-  m_LocalRotation: {x: 0.14211038, y: -0, z: -0, w: 0.9898508}
-  m_LocalPosition: {x: 0, y: 1.42, z: -1.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.21496862, y: -0.014617637, z: -0.0032179344, w: 0.9765063}
+  m_LocalPosition: {x: -0.02, y: 1.77, z: -2.97}
+  m_LocalScale: {x: 1, y: 0.6007817, z: 1}
   m_Children: []
   m_Father: {fileID: 1035129328}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 16.34, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 24.818, y: -1.8900001, z: -0.79300004}
 --- !u!81 &233400802
 AudioListener:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 1035129330}
   - component: {fileID: 1035129329}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CubePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035129323}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1856ec268cb28484ba9e4a158c5ea932, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -412,7 +412,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1035129323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 283.29, y: 1.1, z: -7.3}
+  m_LocalPosition: {x: 43, y: 9.2, z: -142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 233400799}
@@ -467,7 +467,7 @@ TerrainCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881472901}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1856ec268cb28484ba9e4a158c5ea932, type: 2}
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 7dc666b087c11db44903ed324eea7553, type: 2}
   m_EnableTreeColliders: 1
@@ -509,8 +509,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881472901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -190}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.6786, y: 7.2489, z: -187}
+  m_LocalScale: {x: 1.0064812, y: 1.0064818, z: 1.1017585}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
