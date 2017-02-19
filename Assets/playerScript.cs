@@ -9,6 +9,9 @@ public class playerScript : MonoBehaviour {
 	private int count = 0;
 	private GameObject player;
 	private SocketIOComponent socket;
+	private float parseFloat(String s) {
+		return float.Parse (s, CultureInfo.InvariantCulture.NumberFormat);
+	}
 	public void SpawnPlayerServer(SocketIOEvent e) {
 		player = Instantiate(GameObject.Find ("Player"));
 		Debug.Log (e.data.ToString ());
@@ -16,6 +19,7 @@ public class playerScript : MonoBehaviour {
 			float.Parse (e.data.GetField ("xpos").ToString(), CultureInfo.InvariantCulture.NumberFormat),
 			float.Parse (e.data.GetField ("ypos").ToString(), CultureInfo.InvariantCulture.NumberFormat), 
 			float.Parse (e.data.GetField ("zpos").ToString(), CultureInfo.InvariantCulture.NumberFormat));
+		
 		this.myID = int.Parse(e.data.GetField ("id").ToString());
 		player.name = "player" + this.myID;
 		Debug.Log ("SPAWN");
@@ -27,9 +31,17 @@ public class playerScript : MonoBehaviour {
 		GameObject updatedplayer = GameObject.Find ("player" + e.data.GetField ("id").ToString ());
 		Debug.Log (e.data.ToString ());
 		updatedplayer.transform.Translate(new Vector3 (
-			float.Parse (e.data.GetField ("xpos").ToString(), CultureInfo.InvariantCulture.NumberFormat),
-			float.Parse (e.data.GetField ("ypos").ToString(), CultureInfo.InvariantCulture.NumberFormat), 
-			float.Parse (e.data.GetField ("zpos").ToString(), CultureInfo.InvariantCulture.NumberFormat))-updatedplayer.transform.position);
+			parseFloat(e.data.GetField ("xpos").ToString()),
+			parseFloat(e.data.GetField ("ypos").ToString()), 
+			parseFloat(e.data.GetField ("zpos").ToString()))-updatedplayer.transform.position);
+		updatedplayer.GetComponent<Rigidbody> ().velocity = new Vector3 (
+			parseFloat (e.data.GetField ("xvel").ToString ()),
+			parseFloat (e.data.GetField ("yvel").ToString ()),
+			parseFloat (e.data.GetField ("zvel").ToString ()));
+		updatedplayer.transform.rotation = Quaternion.Euler(parseFloat (e.data.GetField ("xrot").ToString ()),
+			parseFloat (e.data.GetField ("yrot").ToString ()),
+			parseFloat (e.data.GetField ("zrot").ToString ()));
+
 		Debug.Log ("update!");
 	}
 
@@ -46,7 +58,6 @@ public class playerScript : MonoBehaviour {
 		socket.On ("moveforward", MoveForward);
 		socket.On ("spawnplayerserver", SpawnPlayerServer);
 		socket.On ("updatepositionserver", UpdatePosition);
-
 		StartCoroutine("test");
 
 	}
@@ -89,9 +100,17 @@ public class playerScript : MonoBehaviour {
 			if (count % 5 == 0) {
 				JSONObject obj = new JSONObject ();
 				obj.AddField ("id", myID);
-				obj.AddField ("xpos", this.transform.position.x);
-				obj.AddField ("ypos", this.transform.position.y);
-				obj.AddField ("zpos", this.transform.position.z);
+				Transform t = this.transform;
+				obj.AddField ("xpos", t.position.x);
+				obj.AddField ("ypos", t.position.y);
+				obj.AddField ("zpos", t.position.z);
+				Vector3 velocity = this.GetComponent<Rigidbody> ().velocity;
+				obj.AddField ("xvel", velocity.x);
+				obj.AddField ("yvel", velocity.y);
+				obj.AddField ("zvel", velocity.z);
+				obj.AddField ("xrot", t.rotation.eulerAngles.x);
+				obj.AddField ("yrot", t.rotation.eulerAngles.y);
+				obj.AddField ("zrot", t.rotation.eulerAngles.z);
 				socket.Emit ("updateposition", obj);
 			}
 		}
