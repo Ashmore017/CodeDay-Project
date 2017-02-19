@@ -7,7 +7,7 @@ function Start () {
 function Update () 
 {
     if(Input.GetKey("w"))   
-        this.transform.Translate (Vector3.forward * 0.3);
+        this.transform.Translate (Vector3.forward * 0.2);
 
 
     if(Input.GetKey("s"))   
@@ -15,11 +15,11 @@ function Update ()
 
 
     if(Input.GetKey("a"))   
-        this.transform.Rotate (Vector3.down * 0.7);
+        this.transform.Rotate (Vector3.down * 1);
 
 
     if(Input.GetKey("d"))   
-        this.transform.Rotate (Vector3.up * 0.7);
+        this.transform.Rotate (Vector3.up * 1);
 
 
     if(Input.GetKey("space"))   
@@ -30,10 +30,16 @@ function Update ()
         this.transform.Translate (Vector3.down * 0.1);
 
     if(Input.GetKey("q"))   
-        this.transform.Rotate (Vector3.up * 0.5);
+        this.transform.Rotate (Vector3.forward * 1);
 
     if(Input.GetKey("e"))   
-        this.transform.Rotate (Vector3.down * 0.5);
+        this.transform.Rotate (Vector3.back * 1);
+
+    if(Input.GetKey("r"))   
+        this.transform.Rotate (Vector3.left * 1);
+
+    if(Input.GetKey("f"))   
+        this.transform.Rotate (Vector3.right * 1);
 
     if(Input.GetKey("c"))   
         this.transform.Rotate (Vector3.right * 0.3);
