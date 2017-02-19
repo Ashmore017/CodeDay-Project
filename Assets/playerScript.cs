@@ -26,19 +26,19 @@ public class playerScript : MonoBehaviour {
 
 	}
 	public void UpdatePosition(SocketIOEvent e) {
-		if (myID == int.Parse (e.data.GetField ("id").ToString ()))
-			return;
+		//if (myID == int.Parse (e.data.GetField ("id").ToString ()))
+		//	return;
 		GameObject updatedplayer = GameObject.Find ("player" + e.data.GetField ("id").ToString ());
 		Debug.Log (e.data.ToString ());
 		updatedplayer.transform.Translate(new Vector3 (
 			parseFloat(e.data.GetField ("xpos").ToString()),
 			parseFloat(e.data.GetField ("ypos").ToString()), 
 			parseFloat(e.data.GetField ("zpos").ToString()))-updatedplayer.transform.position);
-		updatedplayer.GetComponent<Rigidbody> ().velocity = new Vector3 (
+		updatedplayer.GetComponent<Rigidbody>().velocity = new Vector3 (
 			parseFloat (e.data.GetField ("xvel").ToString ()),
 			parseFloat (e.data.GetField ("yvel").ToString ()),
 			parseFloat (e.data.GetField ("zvel").ToString ()));
-		updatedplayer.transform.rotation = Quaternion.Euler(parseFloat (e.data.GetField ("xrot").ToString ()),
+		updatedplayer.transform.localRotation = Quaternion.Euler(parseFloat (e.data.GetField ("xrot").ToString ()),
 			parseFloat (e.data.GetField ("yrot").ToString ()),
 			parseFloat (e.data.GetField ("zrot").ToString ()));
 
