@@ -48,7 +48,11 @@ public class playerScript : MonoBehaviour {
 		Debug.Log ("update!");
 	}
 
-
+	void OnApplicationQuit() {
+		JSONObject obj = new JSONObject ();
+		obj.AddField ("id", myID);
+		socket.Emit ("killplayer", obj);
+	}
 	public void Start() 
 	{
 		GameObject go = GameObject.Find("SocketIO");
